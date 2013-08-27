@@ -19,7 +19,7 @@
     {{ Form::open() }}
 
         <div >
-            <input type="text" name="email" placeholder="Email Address">
+            <input type="text" name="email" placeholder="Email Address" autofocus>
          </div>
 
         <div>
