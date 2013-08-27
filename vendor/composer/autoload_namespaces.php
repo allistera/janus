@@ -28,7 +28,7 @@ return array(
     'Monolog' => array($vendorDir . '/monolog/monolog/src'),
     'Illuminate' => array($vendorDir . '/laravel/framework/src'),
     'HTML2PDF' => array($vendorDir . '/ensepar/html2pdf'),
-    'Doctrine\\DBAL' => array($vendorDir . '/doctrine/dbal/lib'),
+    'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
@@ -36,5 +36,5 @@ return array(
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib'),
     'ClassPreloader' => array($vendorDir . '/classpreloader/classpreloader/src'),
-    'Carbon' => array($vendorDir . '/nesbot/carbon'),
+    'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
 );
