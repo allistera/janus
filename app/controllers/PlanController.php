@@ -1,11 +1,12 @@
 <?php
 
 class PlanController extends \BaseController {
-	
+
 	public function __construct()
 	{
 		$this->beforeFilter('auth');
 	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -149,7 +150,7 @@ class PlanController extends \BaseController {
 
 				return url('plan/show') . '/' . $link;
 				break;
-			
+
 			default:
 				# code...
 				break;
