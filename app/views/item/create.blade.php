@@ -8,8 +8,6 @@ Create Item
   <div class="row">
     <h1>Create Item</h1>
 
-
-
     {{ Form::open() }}
 
         <div class="row">

@@ -1,154 +1,161 @@
 <?php
 
-class UserController extends \BaseController {
+class UserController extends \BaseController
+{
 
+    /**
+    * Display a login form
+    *
+    * @return View user/login
+    */
+    public function getLogin()
+    {
+        return View::make('user/login');
+    }
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function getLogin()
-	{
-		return View::make('user/login');
-	}
+    /**
+    * Post request for login form
+    *
+    * @return Response
+    */
+    public function postLogin()
+    {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function postLogin()
-	{
+        $rules = [
+            'email' => 'required',
+            'password' => 'required|password'
+        ];
 
-		$rules = array(
-		  'email' => 'required',
-		  'password' => 'required|password'
-		);
+        Validator::extend('password', function ($attribute, $value, $parameters) {
+            $credentials = [ 'email' => Input::get('email'), 'password' => Input::get('password') ];
 
-		Validator::extend('password', function($attribute, $value, $parameters)
-		{
-			$credentials = [ 'email' => Input::get('email'), 'password' => Input::get('password') ];
+            return Auth::attempt($credentials);
+        }
+        );
 
-			return Auth::attempt($credentials);
-		});
+        $messages = [
+            'password' => 'Email Address and/or password incorrect!',
+        ];
 
-		$messages = array(
-			'password' => 'Email Address and/or password incorrect!',
-		);
-		$validation = Validator::make(Input::all(), $rules, $messages);
+        $validation = Validator::make(Input::all(), $rules, $messages);
 
-		if ($validation->fails())
-		{
-		 	return Redirect::to('user/login')->withErrors($validation);
-		}else{
+        if ($validation->fails()) {
+            return Redirect::to('user/login')->withErrors($validation);
+        } else {
 
-			// Touch the users row to cause updated on to regenerate
-			User::find(Auth::user()->id)->touch();
+            // Touch the users row to cause updated on to regenerate
+            User::find(Auth::user()->id)->touch();
 
-			return Redirect::to('/')->with('success', "Successfully logged in !");
-		}
+            return Redirect::to('/')->with('success', "Successfully logged in !");
+        }
 
-	}
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function getRegister()
-	{
-		return View::make('user/register');
-	}
+    /**
+    * Show the register form
+    *
+    * @return View user/register
+    */
+    public function getRegister()
+    {
+        return View::make('user/register');
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function postRegister()
-	{
-		$rules = [
-			'display_name'  => 'required|max:50|min:5',
-			'email' => 'required|email|unique:users',
-			'password' => 'required|same:password_confirm|min:5',
-		];
+    /**
+    * Post request for register form
+    *
+    * @return Redirect
+    */
+    public function postRegister()
+    {
+        $rules = [
+            'display_name'  => 'required|max:50|min:5',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|same:password_confirm|min:5',
+        ];
 
-		$input = Input::all();
+        $input = Input::all();
 
-		$validation = Validator::make($input, $rules);
+        $validation = Validator::make($input, $rules);
 
-		if ($validation->fails())
-		{
-			return Redirect::to('user/register')->withErrors($validation);
-		}else{
-			try {
-			    $user = new User();
-			    $user->display_name = Input::get('display_name');
-			    $user->email = Input::get('email');
-			    $user->password = Hash::make(Input::get('password'));
-			    $user->ip_address = $_SERVER['REMOTE_ADDR'];
-			    $user->save();
+        if ($validation->fails()) {
+            return Redirect::to('user/register')->withErrors($validation);
+        } else {
 
-			    Auth::login($user);
-			 
-			    return Redirect::to('/')->with('success', "Successfully Created User Account!");
+            try {
 
-			}  catch( Exception $e ) {
-			    Log::write('info', $e->__toString());
+                $user = new User();
+                $user->display_name = Input::get('display_name');
+                $user->email = Input::get('email');
+                $user->password = Hash::make(Input::get('password'));
+                $user->ip_address = $_SERVER['REMOTE_ADDR'];
+                $user->save();
 
-			    echo "Error creating user account.";
-			}
-		}
-	}
+                Auth::login($user);
 
-	public function getGoals()
-	{
-		$this->beforeFilter('auth');
-		return View::make('user.goals');
-	}
+                return Redirect::to('/')->with('success', "Successfully Created User Account!");
+            } catch (Exception $e) {
+                Log::write('info', $e->__toString());
+                echo "Error creating user account.";
+            }
+        }
+    }
 
-	public function postGoals()
-	{
-		$this->beforeFilter('auth');
+    /**
+     * Form that allows users to set their goals
+     *
+     * @return View user/goals
+     */
+    public function getGoals()
+    {
+        $this->beforeFilter('auth');
+        return View::make('user.goals');
+    }
 
-		$rules = array(
-		  'calories' => 'numeric|between:0,999',
-		  'protein' => 'numeric|between:0,999',
-		  'carbohydrates' => 'numeric|between:0,999',
-		  'fat' => 'numeric|between:0,999',
-		);
+    /**
+     * Post request for updating users goals
+     *
+     * @return View user/goals
+     */
+    public function postGoals()
+    {
+        $this->beforeFilter('auth');
 
-		$validator = Validator::make(Input::all(), $rules);
+        $rules = [
+            'calories' => 'numeric|between:0,999',
+            'protein' => 'numeric|between:0,999',
+            'carbohydrates' => 'numeric|between:0,999',
+            'fat' => 'numeric|between:0,999',
+        ];
 
-	    if ($validator->fails())
-	    {
-	    	Input::flash();
-	        return Redirect::to('user/goals')->withErrors($validator);
-	    }else{
-	    	
-			$user = User::find(Auth::user()->id);
+        $validator = Validator::make(Input::all(), $rules);
 
-			$user->calories = Input::get('calories');
-			$user->protein = Input::get('protein');
-			$user->carbohydrates = Input::get('carbohydrates');
-			$user->fat = Input::get('fat');
+        if ($validator->fails()) {
+            Input::flash();
+            return Redirect::to('user/goals')->withErrors($validator);
+        } else {
 
-			$user->save();
+            $user = User::find(Auth::user()->id);
 
-			return Redirect::to('user/goals')->with('success', "Successfully updated your goals!");
-		}
-	}
+            $user->calories = Input::get('calories');
+            $user->protein = Input::get('protein');
+            $user->carbohydrates = Input::get('carbohydrates');
+            $user->fat = Input::get('fat');
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function getLogout()
-	{
-		Auth::logout();
-		return Redirect::to('user/login')->with('success', "Successfully logged out!");
-	}
+            $user->save();
 
+            return Redirect::to('user/goals')->with('success', "Successfully updated your goals!");
+        }
+    }
+
+    /**
+    * Logout request
+    *
+    * @return Redirect
+    */
+    public function getLogout()
+    {
+        Auth::logout();
+        return Redirect::to('user/login')->with('success', "Successfully logged out!");
+    }
 }
