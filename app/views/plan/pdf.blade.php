@@ -186,7 +186,7 @@
         </table>
 
         <page_footer>
-          Created using Project Janus
+          Created using Your Diet Planner
         </page_footer>
 
     </body>

@@ -24,7 +24,7 @@ Homepage
             <div class="small-9 columns">
                 <h3 class="subheader">Create your own items</h3>
                 <p>
-                    Project Janus doesn't contain a large database of food items; rather you can create your own custom food items filling in it's weight, calories, protein, carbs and fat content. You can then use them on any diet plans you create.
+                    Your Diet Planner doesn't contain a large database of food items; rather you can create your own custom food items filling in it's weight, calories, protein, carbs and fat content. You can then use them on any diet plans you create.
                 </p>
             </div>
         </div>
@@ -56,7 +56,7 @@ Homepage
             <div class="small-9 columns">
                 <h3 class="subheader">Share to the world</h3>
                 <p>
-                    Want to print off your daily plans? Or share with your friends? Project Janus allows you to easily export your plans to PDF format as well as generating valid Reddit markdown or BBCode for forums.
+                    Want to print off your daily plans? Or share with your friends? Your Diet Planner allows you to easily export your plans to PDF format as well as generating valid Reddit markdown or BBCode for forums.
                 </p>
             </div>
         </div>

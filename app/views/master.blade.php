@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@yield('title') :: Project Janus</title>
+    <title>@yield('title') :: Your Diet Planner</title>
 
     {{ HTML::style('css/normalize.css') }}
     {{ HTML::style('css/foundation.css') }}
@@ -25,7 +25,7 @@
         <ul class="title-area">
             <!-- Title Area -->
             <li class="name">
-                <h1><a href="/"><img src="/img/logo.png" width="32"> Project Janus </a></h1>
+                <h1><a href="/"><img src="/img/logo.png" width="32"> Your Diet Planner </a></h1>
             </li>
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
@@ -44,7 +44,9 @@
     @else
 
     <div class="userNav" style="background">
-        <h1 id="logo"><a href="/"><img src="/img/logo.png" width="32">Project Janus</a></h1>
+        <h1 id="logo"><a href="/"><img src="/img/logo.png" width="32"><span>Your Diet Planner</span></a></h1>
+
+        <div class="clearfix"></div>
 
         <div id="createBtn">
             <form action="/plan/create" method="get">
