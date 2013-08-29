@@ -1,114 +1,125 @@
 <?php
 
-class ItemController extends \BaseController {
-	
-	public function __construct()
-	{
-		$this->beforeFilter('auth');
-	}
-	
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function getIndex()
-	{
-		return View::make('item.list')->with('items', Item::whereuser_id(Auth::user()->id)->orderBy('name')->paginate(20) );
-	}
+class ItemController extends \BaseController
+{
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function getCreate()
-	{
-		return View::make('item.create');
-	}
+    /**
+     * Validation rules for items create/view
+     */
+    private $validationRules = [
+        'name' => 'required|min:2',
+        'weight' => 'max:100',
+        'calories' => 'numeric|between:0,999',
+        'protein' => 'numeric|between:0,999',
+        'carbohydrates' => 'numeric|between:0,999',
+        'fat' => 'numeric|between:0,999',
+    ];
 
-	public function postCreate()
-	{
-		$rules = array(
-		  'name' => 'required|min:2',
-		  'weight' => 'max:100',
-		  'calories' => 'numeric|between:0,999',
-		  'protein' => 'numeric|between:0,999',
-		  'carbohydrates' => 'numeric|between:0,999',
-		  'fat' => 'numeric|between:0,999',
-		);
+    public function __construct()
+    {
+        $this->beforeFilter('auth');
+    }
 
-		$validator = Validator::make(Input::all(), $rules);
+    /**
+     * View a list of all the users items
+     *
+     * @return View item/list
+     */
+    public function getIndex()
+    {
+        $items = Item::whereuser_id(Auth::user()->id)->orderBy('name')->paginate(20);
+        return View::make('item.list')->with('items', $items);
+    }
 
-	    if ($validator->fails())
-	    {
-	    	Input::flash();
-	        return Redirect::to('item/create')->withErrors($validator);
-	    }else{
-	    	
-			$item = new Item;
+    /**
+    * Show the form for creating a new item
+    *
+    * @return View item/create
+    */
+    public function getCreate()
+    {
+        return View::make('item.create');
+    }
 
-			$item->name = Input::get('name');
-			$item->weight = Input::get('weight');
-			$item->calories = Input::get('calories');
-			$item->protein = Input::get('protein');
-			$item->carbohydrates = Input::get('carbohydrates');
-			$item->fat = Input::get('fat');
-			$item->user_id = Auth::user()->id;
+    /**
+     * Create a new item logic
+     *
+     * @return Redirect
+     */
+    public function postCreate()
+    {
+        $validator = Validator::make(Input::all(), $this->validationRules);
 
-			$item->save();
+        if ($validator->fails()) {
+            Input::flash();
+            return Redirect::to('item/create')->withErrors($validator);
+        } else {
 
-			return Redirect::to('item')->with('success', "Successfully Created The {$item->name} Item !");
-		}
-  	}
+            $item = new Item;
 
-  	public function getView($id)
-  	{
-  		return View::make('item.view')->with('item', Item::find($id));
-  	}
+            $item->name = Input::get('name');
+            $item->weight = Input::get('weight');
+            $item->calories = Input::get('calories');
+            $item->protein = Input::get('protein');
+            $item->carbohydrates = Input::get('carbohydrates');
+            $item->fat = Input::get('fat');
+            $item->user_id = Auth::user()->id;
 
-  	public function postView($id)
-  	{
-		$rules = array(
-		  'name' => 'required|min:2',
-		  'weight' => 'max:100',
-		  'calories' => 'numeric|between:0,999',
-		  'protein' => 'numeric|between:0,999',
-		  'carbohydrates' => 'numeric|between:0,999',
-		  'fat' => 'numeric|between:0,999',
-		);
+            $item->save();
 
-		$validator = Validator::make(Input::all(), $rules);
+            return Redirect::to('item')->with('success', "Successfully Created The {$item->name} Item!");
+        }
+    }
 
-	    if ($validator->fails())
-	    {
-	    	Input::flash();
-	        return Redirect::to('item/view/' . $id)->withErrors($validator);
-	    }else{
-	    	$item = Item::find($id);
-			$item->name = Input::get('name');
-			$item->weight = Input::get('weight');
-			$item->calories = Input::get('calories');
-			$item->protein = Input::get('protein');
-			$item->carbohydrates = Input::get('carbohydrates');
-			$item->fat = Input::get('fat');
-			$item->save();
-	    	return Redirect::to('item')->with('success', "Successfully Updated The {$item->name} Item !");
-	    }
+    /**
+     * Display a form containing item to edit
+     *
+     * @param  int $id Of the item to get
+     * @return View    item/view
+     */
+    public function getView($id)
+    {
+        return View::make('item.view')->with('item', Item::find($id));
+    }
 
-  	}
+    /**
+     * Logic to update an item
+     *
+     * @param  int $id Of the item to update
+     * @return Redirect
+     */
+    public function postView($id)
+    {
+        $validator = Validator::make(Input::all(), $this->validationRules);
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function getDelete($id)
-	{
-		Item::destroy($id);
+        if ($validator->fails()) {
+            Input::flash();
+            return Redirect::to('item/view/' . $id)->withErrors($validator);
+        } else {
+            $item = Item::find($id);
+            $item->name = Input::get('name');
+            $item->weight = Input::get('weight');
+            $item->calories = Input::get('calories');
+            $item->protein = Input::get('protein');
+            $item->carbohydrates = Input::get('carbohydrates');
+            $item->fat = Input::get('fat');
+            $item->save();
 
-		return Redirect::to('item')->with('success', "Successfully Deleted The Item!");
-	}
+            return Redirect::to('item')->with('success', "Successfully Updated The {$item->name} Item!");
+        }
 
+    }
+
+    /**
+    * Remove the specified item from the database.
+    *
+    * @param  int  $id
+    * @return Response
+    */
+    public function getDelete($id)
+    {
+        Item::destroy($id);
+
+        return Redirect::to('item')->with('success', "Successfully Deleted The Item!");
+    }
 }

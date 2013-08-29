@@ -22,7 +22,7 @@
     {{ Form::open() }}
 
         <div>
-          <input type="text" name="display_name" placeholder="Display Name">
+          <input type="text" name="display_name" placeholder="Display Name" autofocus>
         </div>
 
         <div>
