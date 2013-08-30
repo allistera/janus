@@ -122,7 +122,7 @@ class UserController extends \BaseController
         $this->beforeFilter('auth');
 
         $rules = [
-            'calories' => 'numeric|between:0,999',
+            'calories' => 'numeric|between:0,9999',
             'protein' => 'numeric|between:0,999',
             'carbohydrates' => 'numeric|between:0,999',
             'fat' => 'numeric|between:0,999',
