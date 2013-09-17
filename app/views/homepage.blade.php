@@ -24,7 +24,7 @@ Homepage
             <div class="small-9 columns">
                 <h3 class="subheader">Create your own items</h3>
                 <p>
-                    Your Diet Planner doesn't contain a large database of food items; rather you can create your own custom food items filling in it's weight, calories, protein, carbs and fat content. You can then use them on any diet plans you create.
+                    Your Diet Planner doesn't contain a large database of food items; rather you create your own custom items filling in it's nutritional information: weight, calories, protein, carbs and fat content. You can then use them on any diet plans you create, this gives complete custom control over the plans you create.
                 </p>
             </div>
         </div>
@@ -37,7 +37,7 @@ Homepage
             <div class="small-9 columns">
                 <h3 class="subheader">Set your own goals</h3>
                 <p>
-                    Set your personal intake targets and when creating a new plan you can easily see if you have met them.
+                    Set your personal nutritional goals so you can easily see if you have matched your targets when creating new diet plans.
                 </p>
             </div>
             <div class="small-3 columns">
@@ -56,7 +56,7 @@ Homepage
             <div class="small-9 columns">
                 <h3 class="subheader">Share to the world</h3>
                 <p>
-                    Want to print off your daily plans? Or share with your friends? Your Diet Planner allows you to easily export your plans to PDF format as well as generating valid Reddit markdown or BBCode for forums.
+                    Want to print off your daily plans? Or share with your friends? Your Diet Planner allows you to easily export generated plans to PDF format as well as generating valid Reddit markdown or BBCode for forums.
                 </p>
             </div>
         </div>
@@ -68,7 +68,7 @@ Homepage
         <center>
             <h3 class="subheader">Problems? </h3>
             <p>
-                If you encounter any issues with the website feel free to get in touch. Just click the Contact button at the bottom right of any page or <a href="http://www.allisterantosik.com/contact" target="_blank">click here</a>.
+                If you encounter any issues with the Your Diet Planner or just want to provide feedback feel free to get in touch. Just click the Contact button at the bottom right of any page or <a href="http://www.allisterantosik.com/contact" target="_blank">click here</a>.
             </p>
         </center>
     </div>
