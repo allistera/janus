@@ -170,6 +170,9 @@ Creating Plan
                     @endforeach
                     </ul>
                 </div>
+                @if (count($items) === 0)
+                    <p>No items created yet - <a href="/item/create">Create One</a>?</p>
+                @endif
             </div>
         </div>
 
