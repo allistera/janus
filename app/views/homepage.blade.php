@@ -16,7 +16,7 @@ Homepage
 </div>
 
 <div class="row homepageRow">
-    <div class="small-8 large-centered columns">
+    <div class="columns">
         <div class="row">
             <div class="small-3 columns">
                 <a href="/img/homepage/items_large.png" class="fancybox th radius"><img src="/img/homepage/items.png"></a>
@@ -32,7 +32,7 @@ Homepage
 </div>
 
 <div class="row homepageRow">
-    <div class="small-8 large-centered columns">
+    <div class="twelve columns">
         <div class="row">
             <div class="small-9 columns">
                 <h3 class="subheader">Set your own goals</h3>
@@ -48,7 +48,7 @@ Homepage
 </div>
 
 <div class="row homepageRow">
-    <div class="small-8 large-centered columns">
+    <div class="twelve columns">
         <div class="row">
             <div class="small-3 columns">
                 <a href="/img/homepage/pdf_large.png" class="fancybox th radius"><img src="/img/homepage/pdf.png"></a>
@@ -64,7 +64,7 @@ Homepage
 </div>
 
 <div class="row homepageRow">
-    <div class="small-8 large-centered columns">
+    <div class="twelve columns">
         <center>
             <h3 class="subheader">Problems? </h3>
             <p>
