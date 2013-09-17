@@ -27,7 +27,7 @@ Route::get('/privacy', function()
 });
 
 Route::controller('user', 'UserController');
-Route::controller('plan', 'PlanController', ['before' => 'auth']);
+Route::controller('plan', 'PlanController');
 Route::controller('item', 'ItemController');
 
 Route::filter('auth', function()
