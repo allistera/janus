@@ -1,134 +1,164 @@
-.mainSection{padding-left:200px; padding-top:20px;}
-#itemsList li{cursor: move}
-
-.homepageRow{margin-top: 50px;}
-
-.footer{padding: 25px 0;}
-
-.advert{width: 100%; text-align: center}
-
-.items{height: 574px;overflow:auto;}
-
-.pagination{text-align:center; color:#aaa; margin: 10px 0;}
-.pagination a,.pagination strong{color:#666;border:1px solid #ddd;background:#fcfcfc;padding:4px 12px;margin:0 3px;text-decoration:none;}
-.pagination a:hover{background:#f80;color:#fff;}
-.pagination strong{background:#666;border:1px solid #666 ;color:#fff;}
-.active a { background:#aaa; color:#fff !important;}
-
-.addBtn{margin-top: 40px}
-
-.top-bar, .top-bar-section li a{background: #33363b !important;}
-.top-bar-section .divider{border:0 !important; border-left: solid 1px #4F4F4F !important}
-
-.clearfix{clear:both;}
-
-.userNav{
+.mainSection {
+    padding-left:200px;
+    padding-top:20px;
+}
+#itemsList li {
+    cursor: move
+}
+.homepageRow {
+    margin-top: 50px;
+    max-width: 700px;
+}
+.footer {
+    padding: 25px 0;
+}
+.advert {
+    width: 100%;
+    text-align: center
+}
+.items {
+    height: 574px;
+    overflow:auto;
+}
+.pagination {
+    text-align:center;
+    color:#aaa;
+    margin: 10px 0;
+}
+.pagination a, .pagination strong {
+    color:#666;
+    border:1px solid #ddd;
+    background:#fcfcfc;
+    padding:4px 12px;
+    margin:0 3px;
+    text-decoration:none;
+}
+.pagination a:hover {
+    background:#f80;
+    color:#fff;
+}
+.pagination strong {
+    background:#666;
+    border:1px solid #666;
+    color:#fff;
+}
+.active a {
+    background:#aaa;
+    color:#fff !important;
+}
+.addBtn {
+    margin-top: 40px
+}
+.top-bar, .top-bar-section li a {
+    background: #33363b !important;
+}
+.top-bar-section .divider {
+    border:0 !important;
+    border-left: solid 1px #4F4F4F !important
+}
+.clearfix {
+    clear:both;
+}
+.userNav {
     float:left;
     position: fixed;
     background: #33363b;
     min-height:100%;
     width: 240px;
 }
-    #logo{padding-top: 10px;}
-    #logo a{
-        color: #f4f4f1;
-        font-size: 17px !important;
-        float:left;
-        height: 60px;
-        font-family: 'Fauna One', serif;
-    }
-    #logo span{
-        margin-left: 10px;
-    }
-    #logo a img{
-        float:left;
-        margin-left: 15px
-    }
-
-    #createBtn{
-        background: #25272a;
-        padding: 14px 20px 0px 20px;
-        text-align: center;
-    }
-        #createBtn button{
-            padding: 15px;
-            background: #d24d33;
-            width: 90%;
-            font-size: 12px;
-            color: #fff;
-            border: 0;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            box-shadow: none;
-        }
-        #createBtn button:hover{
-            background: #BD422A;
-        }
-
-    .userNav ul{
-        margin:0;
-    }
-        .userNav li{
-            list-style: none;
-            padding: 10px;
-        }
-            .userNav li:hover{
-                list-style: none;
-                padding: 10px;
-            }
-            .userNav a{
-                color: #DBDBDB;
-                font-size: 16px;
-                font-family: 'Balthazar', serif;
-            }
-            .userNav a:hover{
-                color: #fff;
-            }
-            .userNav a i{
-                padding: 0px 15px 0 5px;
-                top: 3px;
-                position: relative;
-            }
-                .userNav li:hover{
-                    background: #48474A;
-                }
-
-            .userNav .active{
-                background: #48474A;
-            }
-
-            .userNav ul .spacer
-            {
-                border-top: 1px solid #25272a;
-                margin-top: 5px;
-            }
-
-    .userNavFooter{
-        bottom: 5px;
-        position: fixed;
-        width:200px;
-        padding: 5px 0 5px 10px;
-        border-top: 1px solid #25272a;
-        color: #A8A8A8;
-
-    }
-        .userNavFooter a{color: #A8A8A8; font-size: 12px}
-
-html, body
-{
+#logo {
+    padding-top: 10px;
+}
+#logo a {
+    color: #f4f4f1;
+    font-size: 17px !important;
+    float:left;
+    height: 60px;
+    font-family:'Fauna One', serif;
+}
+#logo span {
+    margin-left: 10px;
+}
+#logo a img {
+    float:left;
+    margin-left: 15px
+}
+#createBtn {
+    background: #25272a;
+    padding: 14px 20px 0px 20px;
+    text-align: center;
+}
+#createBtn button {
+    padding: 15px;
+    background: #d24d33;
+    width: 90%;
+    font-size: 12px;
+    color: #fff;
+    border: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+#createBtn button:hover {
+    background: #BD422A;
+}
+.userNav ul {
+    margin:0;
+}
+.userNav li {
+    list-style: none;
+    padding: 10px;
+}
+.userNav li:hover {
+    list-style: none;
+    padding: 10px;
+}
+.userNav a {
+    color: #DBDBDB;
+    font-size: 16px;
+    font-family:'Balthazar', serif;
+}
+.userNav a:hover {
+    color: #fff;
+}
+.userNav a i {
+    padding: 0px 15px 0 5px;
+    top: 3px;
+    position: relative;
+}
+.userNav li:hover {
+    background: #48474A;
+}
+.userNav .active {
+    background: #48474A;
+}
+.userNav ul .spacer {
+    border-top: 1px solid #25272a;
+    margin-top: 5px;
+}
+.userNavFooter {
+    bottom: 5px;
+    position: fixed;
+    width:200px;
+    padding: 5px 0 5px 10px;
+    border-top: 1px solid #25272a;
+    color: #A8A8A8;
+}
+.userNavFooter a {
+    color: #A8A8A8;
+    font-size: 12px
+}
+html, body {
     height: 100%;
     background: #f0f0ed;
 }
-
-h1, h2, h3{
-    font-family: 'Fauna One', serif;
+h1, h2, h3 {
+    font-family:'Fauna One', serif;
 }
-
-.createButton
-{
+.createButton {
     padding: 15px;
     background: #3498db;
     width: 150px;
@@ -143,34 +173,32 @@ h1, h2, h3{
     -moz-box-shadow: none;
     box-shadow: none;
 }
-    .createButton:hover
-    {
-        background: #2C8FD1;
-        color: #fff;
-    }
-    .createButton i{
-        margin: 10px 10px 0 0;
-    }
-
-.signupBtn{
+.createButton:hover {
+    background: #2C8FD1;
+    color: #fff;
+}
+.createButton i {
+    margin: 10px 10px 0 0;
+}
+.signupBtn {
     padding:20px 50px;
     font-size:14px;
 }
-.pjTable{
+.pjTable {
     width: 100%;
-    font-family: 'Fauna One', serif;
+    font-family:'Fauna One', serif;
 }
-    .pjTable th{
-        height: 50px;
-        color:#48474A;
-        border: 1px solid #D9D9D9;
-    }
-    .pjTable tr{
-
-    }
-        .pjTable td a:hover{text-decoration: underline;}
-
-.pjSuccessBox{
+.pjTable th {
+    height: 50px;
+    color:#48474A;
+    border: 1px solid #D9D9D9;
+}
+.pjTable tr {
+}
+.pjTable td a:hover {
+    text-decoration: underline;
+}
+.pjSuccessBox {
     top: 0;
     position: fixed;
     width: 100%;
@@ -181,15 +209,14 @@ h1, h2, h3{
     opacity: 0.8;
     border-bottom: solid 1px #21B05E;
 }
-.pjSuccessBox a{
+.pjSuccessBox a {
     position: fixed;
     right: 10px;
     top: 0;
     color: #fff;
     font-size: 40px;
 }
-
-.pjErrorBox{
+.pjErrorBox {
     top: 0;
     position: fixed;
     width: 100%;
@@ -200,15 +227,14 @@ h1, h2, h3{
     opacity: 0.8;
     border-bottom: solid 1px #21B05E;
 }
-    .pjErrorBox a{
-        position: fixed;
-        right: 10px;
-        top: 0;
-        color: #fff;
-        font-size: 40px;
-    }
-
-.pjLogin{
+.pjErrorBox a {
+    position: fixed;
+    right: 10px;
+    top: 0;
+    color: #fff;
+    font-size: 40px;
+}
+.pjLogin {
     background: #F2F2F2;
     text-align: center;
     width: 300px;
@@ -216,123 +242,105 @@ h1, h2, h3{
     padding: 20px;
     border: 1px solid #D4D4D4;
 }
-    .pjLogin h2{
-        font-size: 14px;
-        margin: 10px 0 25px 0;
-        text-transform: uppercase;
-    }
-
-    .pjLogin div input{
-        width: 100%;
-        border: 1px solid #D4D4D4;
-        height: 50px;
-    }
-    .pjLogin #pgLoginRegister{
-        background: #fff;
-        width: 300px;
-        margin: 10px 0 -20px -20px;
-        padding: 20px;
-        font-size: 12px;
-    }
-
-#pgLoginForget{
+.pjLogin h2 {
+    font-size: 14px;
+    margin: 10px 0 25px 0;
+    text-transform: uppercase;
+}
+.pjLogin div input {
+    width: 100%;
+    border: 1px solid #D4D4D4;
+    height: 50px;
+}
+.pjLogin #pgLoginRegister {
+    background: #fff;
+    width: 300px;
+    margin: 10px 0 -20px -20px;
+    padding: 20px;
+    font-size: 12px;
+}
+#pgLoginForget {
     text-align: center;
     font-size: 12px;
     margin-top: 20px;
 }
-
-.pjLoginAlert li{
+.pjLoginAlert li {
     color: #e74c3c;
     list-style: none;
     font-size: 12px
 }
-
-.shareContainer{
-
+.shareContainer {
 }
-    .shareContainer i{
-        font-size: 20px;
-        top: 5px;
-        position: relative;
-    }
-
-
-
-#shareBar{
-  margin-left: 0px;
-  margin-top:  0px;
-  right: 240px;
-  overflow: hidden;
-  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
+.shareContainer i {
+    font-size: 20px;
+    top: 5px;
+    position: relative;
+}
+#shareBar {
+    margin-left: 0px;
+    margin-top: 0px;
+    right: 240px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
-  background: #fff;
-  position:absolute;
-  z-index:9
+    background: #fff;
+    position:absolute;
+    z-index:9
 }
-
-
-
-
-
-    #shareBar li{
-        float:left;
-        padding: 20px;
-        list-style: none;
-        text-align: center;
-        background: #fff;
-        font-size: 12px;
-    }
-        #shareBar li a{color: #000;}
-    .shareGet{
-        font-size: 12px;
-        color: #000;
-    }
-
-#shareReturn{
+#shareBar li {
+    float:left;
+    padding: 20px;
+    list-style: none;
+    text-align: center;
+    background: #fff;
+    font-size: 12px;
+}
+#shareBar li a {
+    color: #000;
+}
+.shareGet {
+    font-size: 12px;
+    color: #000;
+}
+#shareReturn {
     float:right;
     right: 240px;
     top:246px;
     position:absolute;
     z-index:10;
-
-        height: 150px;
+    height: 150px;
 }
-    #shareReturn textarea{
-        box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
-        height: 150px;
-        width: 500px;
-        border: 0;
-        overflow: hidden;
-        margin:0;
-        background: #fff;
-    }
-
+#shareReturn textarea {
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
+    height: 150px;
+    width: 500px;
+    border: 0;
+    overflow: hidden;
+    margin:0;
+    background: #fff;
+}
 .arrow-up {
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-
     border-top: 10px solid rgba(0, 0, 0, 0.2);
     float:right;
     margin-right:105px;
 }
-
-.tooltip{
+.tooltip {
     background: #33363b;
     font-size: 12px;
     font-weight:normal;
 }
-
-.delBtn{
+.delBtn {
     text-decoration: none !important;
     margin-right: 5px
 }
-    .delBtn i{
-        opacity: 0.2;
-        color: #000;
-    }
-
-        .delBtn i:hover{
-            opacity: 0.6;
-        }
+.delBtn i {
+    opacity: 0.2;
+    color: #000;
+}
+.delBtn i:hover {
+    opacity: 0.6;
+}

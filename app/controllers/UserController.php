@@ -122,7 +122,7 @@ class UserController extends \BaseController
         $this->beforeFilter('auth');
 
         $rules = [
-            'calories' => 'numeric|between:0,999',
+            'calories' => 'numeric|between:0,9999',
             'protein' => 'numeric|between:0,999',
             'carbohydrates' => 'numeric|between:0,999',
             'fat' => 'numeric|between:0,999',
@@ -157,5 +157,34 @@ class UserController extends \BaseController
     {
         Auth::logout();
         return Redirect::to('user/login')->with('success', "Successfully logged out!");
+    }
+
+    /**
+     * Delete all user accounts who have not logged in more then 60 days
+     *
+     * @return Null
+     */
+    public function getCleanup()
+    {
+        // Calculate date in 60 days
+        $date = new DateTime();
+        $date->modify('-60 day');
+
+        // Get all users where last login is > 60
+        $users = User::where('updated_at', '<=', $date->format('Y-m-d H:i:s'))->get();
+
+        foreach ($users as $user) {
+            // Delete all users items
+            Item::where('user_id', $user->id)->delete();
+
+            // Delete all users plans
+            Plan::where('user_id', $user->id)->delete();
+
+            // Delete all users shares
+            Share::where('user_id', $user->id)->delete();
+
+            // Delete the user account
+            User::destroy($user->id);
+        }
     }
 }

@@ -1,36 +1,33 @@
-$(function() {
-    $("#q").keyup(function(){
+$(function() {    
+    $("#q").keyup(function() {
 
-        // Retrieve the input field text and reset the count to zero
-        var filter = $(this).val();
- 
-        // Loop through the comment list
-        $("#itemsList li").each(function(){
- 
-            // If the list item does not contain the text phrase fade it out
-            if ($(this).text().search(new RegExp(filter, "i")) < 0) {
-                $(this).hide();
-                
-            // Show the list item if the phrase matches and increase the count by 1
-            } else {
-                $(this).show();
-            }
-        });
- 
-    });
-
-
-    $( "#catalog" ).accordion();
-    $( "#catalog li" ).draggable({
-      appendTo: "body",
-      helper: "clone"
+                 // Retrieve the input field text and reset the count to zero
+                
+        var filter = $(this).val();          // Loop through the comment list
+                
+        $("#itemsList li").each(function() {              // If the list item does not contain the text phrase fade it out
+                        
+            if ($(this).text().search(new RegExp(filter, "i")) < 0) {                
+                $(this).hide();                             // Show the list item if the phrase matches and increase the count by 1
+                            
+            } else {                
+                $(this).show();            
+            }        
+        });     
     });
 
-    $( ".breakfast" ).droppable({ 
-        drop: function(event, ui) { 
-          $( this ).find( ".placeholder" ).remove();
 
-          $(this).append( '<tr id="' + ui.draggable.attr('id') + '"><td> ' + ui.draggable.html() + ' </td><td>' + ui.draggable.attr('weight') + '</td><td class="breakfastCalories">' + ui.draggable.attr('calories') + '</td><td class="breakfastProtein">' + ui.draggable.attr('protein') + '</td><td class="breakfastCarbs">' + ui.draggable.attr('carbohydrates') + '</td><td class="breakfastFat">' + ui.draggable.attr('fat') + '</td></tr>');
+    $("#catalog").accordion();
+    $("#catalog li").draggable({
+        appendTo: "body",
+        helper: "clone"
+    });
+
+    $(".breakfast").droppable({
+        drop: function(event, ui) {
+            $(this).find(".placeholder").remove();
+
+            $(this).append('<tr id="' + ui.draggable.attr('id') + '"><td> ' + ui.draggable.html() + ' </td><td>' + ui.draggable.attr('weight') + '</td><td class="breakfastCalories">' + ui.draggable.attr('calories') + '</td><td class="breakfastProtein">' + ui.draggable.attr('protein') + '</td><td class="breakfastCarbs">' + ui.draggable.attr('carbohydrates') + '</td><td class="breakfastFat">' + ui.draggable.attr('fat') + '</td></tr>');
 
 
             var cal = 0;
@@ -39,11 +36,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     cal += parseFloat(value);
                 }
             });
-            cal = Math.round(cal*100)/100;
+            cal = Math.round(cal * 100) / 100;
             $(".breakfastCaloriesTotal").html(cal);
 
             var pro = 0;
@@ -52,11 +49,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     pro += parseFloat(value);
                 }
             });
-            pro = Math.round(pro*100)/100;
+            pro = Math.round(pro * 100) / 100;
             $(".breakfastProteinTotal").html(pro);
 
             var car = 0;
@@ -65,11 +62,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     car += parseFloat(value);
                 }
             });
-            car = Math.round(car*100)/100;
+            car = Math.round(car * 100) / 100;
             $(".breakfastCarbsTotal").html(car);
 
             var fat = 0;
@@ -78,11 +75,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     fat += parseFloat(value);
                 }
             });
-            fat = Math.round(fat*100)/100;
+            fat = Math.round(fat * 100) / 100;
             $(".breakfastFatTotal").html(fat);
 
             // Calculate grand totals
@@ -91,11 +88,11 @@ $(function() {
     });
 
 
-    $( ".lunch" ).droppable({ 
-        drop: function(event, ui) { 
-          $( this ).find( ".placeholder" ).remove();
+    $(".lunch").droppable({
+        drop: function(event, ui) {
+            $(this).find(".placeholder").remove();
 
-          $(this).append( '<tr id="' + ui.draggable.attr('id') + '"><td> ' + ui.draggable.html() + ' </td><td>' + ui.draggable.attr('weight') + '</td><td class="lunchCalories">' + ui.draggable.attr('calories') + '</td><td class="lunchProtein">' + ui.draggable.attr('protein') + '</td><td class="lunchCarbs">' + ui.draggable.attr('carbohydrates') + '</td><td class="lunchFat">' + ui.draggable.attr('fat') + '</td></tr>');
+            $(this).append('<tr id="' + ui.draggable.attr('id') + '"><td> ' + ui.draggable.html() + ' </td><td>' + ui.draggable.attr('weight') + '</td><td class="lunchCalories">' + ui.draggable.attr('calories') + '</td><td class="lunchProtein">' + ui.draggable.attr('protein') + '</td><td class="lunchCarbs">' + ui.draggable.attr('carbohydrates') + '</td><td class="lunchFat">' + ui.draggable.attr('fat') + '</td></tr>');
 
 
             var cal = 0;
@@ -104,11 +101,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     cal += parseFloat(value);
                 }
             });
-            cal = Math.round(cal*100)/100;
+            cal = Math.round(cal * 100) / 100;
             $(".lunchCaloriesTotal").html(cal);
 
             var pro = 0;
@@ -117,11 +114,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     pro += parseFloat(value);
                 }
             });
-            pro = Math.round(pro*100)/100;
+            pro = Math.round(pro * 100) / 100;
             $(".lunchProteinTotal").html(pro);
 
             var car = 0;
@@ -130,11 +127,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     car += parseFloat(value);
                 }
             });
-            car = Math.round(car*100)/100;
+            car = Math.round(car * 100) / 100;
             $(".lunchCarbsTotal").html(car);
 
             var fat = 0;
@@ -143,11 +140,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     fat += parseFloat(value);
                 }
             });
-            fat = Math.round(fat*100)/100;
+            fat = Math.round(fat * 100) / 100;
             $(".lunchFatTotal").html(fat);
 
             // Calculate grand totals
@@ -155,11 +152,11 @@ $(function() {
         }
     });
 
-    $( ".dinner" ).droppable({ 
-        drop: function(event, ui) { 
-          $( this ).find( ".placeholder" ).remove();
+    $(".dinner").droppable({
+        drop: function(event, ui) {
+            $(this).find(".placeholder").remove();
 
-          $(this).append( '<tr id="' + ui.draggable.attr('id') + '"><td> ' + ui.draggable.html() + ' </td><td>' + ui.draggable.attr('weight') + '</td><td class="dinnerCalories">' + ui.draggable.attr('calories') + '</td><td class="dinnerProtein">' + ui.draggable.attr('protein') + '</td><td class="dinnerCarbs">' + ui.draggable.attr('carbohydrates') + '</td><td class="dinnerFat">' + ui.draggable.attr('fat') + '</td></tr>');
+            $(this).append('<tr id="' + ui.draggable.attr('id') + '"><td> ' + ui.draggable.html() + ' </td><td>' + ui.draggable.attr('weight') + '</td><td class="dinnerCalories">' + ui.draggable.attr('calories') + '</td><td class="dinnerProtein">' + ui.draggable.attr('protein') + '</td><td class="dinnerCarbs">' + ui.draggable.attr('carbohydrates') + '</td><td class="dinnerFat">' + ui.draggable.attr('fat') + '</td></tr>');
 
 
             var cal = 0;
@@ -168,11 +165,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     cal += parseFloat(value);
                 }
             });
-            cal = Math.round(cal*100)/100;
+            cal = Math.round(cal * 100) / 100;
             $(".dinnerCaloriesTotal").html(cal);
 
             var pro = 0;
@@ -181,11 +178,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     pro += parseFloat(value);
                 }
             });
-            pro = Math.round(pro*100)/100;
+            pro = Math.round(pro * 100) / 100;
             $(".dinnerProteinTotal").html(pro);
 
             var car = 0;
@@ -194,11 +191,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     car += parseFloat(value);
                 }
             });
-            car = Math.round(car*100)/100;
+            car = Math.round(car * 100) / 100;
             $(".dinnerCarbsTotal").html(car);
 
             var fat = 0;
@@ -207,11 +204,11 @@ $(function() {
 
                 var value = $(this).text();
                 // add only if the value is number
-                if(!isNaN(value) && value.length != 0) {
+                if (!isNaN(value) && value.length != 0) {
                     fat += parseFloat(value);
                 }
             });
-            fat = Math.round(fat*100)/100;
+            fat = Math.round(fat * 100) / 100;
             $(".dinnerFatTotal").html(fat);
 
             // Calculate grand totals
@@ -220,77 +217,77 @@ $(function() {
         }
     });
 
-function calculateGrandTotals(){
+    function calculateGrandTotals() {
         var grandCal = 0;
-      $(".dinnerCaloriesTotal, .lunchCaloriesTotal, .breakfastCaloriesTotal").each(function() {
+        $(".dinnerCaloriesTotal, .lunchCaloriesTotal, .breakfastCaloriesTotal").each(function() {
 
-          var value = $(this).text();
-          // add only if the value is number
-          if(!isNaN(value) && value.length != 0) {
-              grandCal += parseFloat(value);
-          }
-      });
-      grandCal = Math.round(grandCal*100)/100;
-      $(".dailyCaloriesTotal").html(grandCal);
-      $("#caloriesTotal").val(grandCal);
+            var value = $(this).text();
+            // add only if the value is number
+            if (!isNaN(value) && value.length != 0) {
+                grandCal += parseFloat(value);
+            }
+        });
+        grandCal = Math.round(grandCal * 100) / 100;
+        $(".dailyCaloriesTotal").html(grandCal);
+        $("#caloriesTotal").val(grandCal);
 
         var grandPro = 0;
-      $(".dinnerProteinTotal, .lunchProteinTotal, .breakfastProteinTotal").each(function() {
+        $(".dinnerProteinTotal, .lunchProteinTotal, .breakfastProteinTotal").each(function() {
 
-          var value = $(this).text();
-          // add only if the value is number
-          if(!isNaN(value) && value.length != 0) {
-              grandPro += parseFloat(value);
-          }
-      });
-      grandPro = Math.round(grandPro*100)/100;
-      $(".dailyProteinTotal").html(grandPro);
-      $("#proteinTotal").val(grandPro);
-
-          // Calculate grand totals
-      var grandCarbs = 0;
-      $(".dinnerCarbsTotal, .lunchCarbsTotal, .breakfastCarbsTotal").each(function() {
-
-          var value = $(this).text();
-          // add only if the value is number
-          if(!isNaN(value) && value.length != 0) {
-              grandCarbs += parseFloat(value);
-          }
-      });
-      grandCarbs = Math.round(grandCarbs*100)/100;
-      $(".dailyCarbsTotal").html(grandCarbs);
-      $("#carbohydratesTotal").val(grandCarbs);
+            var value = $(this).text();
+            // add only if the value is number
+            if (!isNaN(value) && value.length != 0) {
+                grandPro += parseFloat(value);
+            }
+        });
+        grandPro = Math.round(grandPro * 100) / 100;
+        $(".dailyProteinTotal").html(grandPro);
+        $("#proteinTotal").val(grandPro);
 
         // Calculate grand totals
-      var grandFat = 0;
-      $(".dinnerFatTotal, .lunchFatTotal, .breakfastFatTotal").each(function() {
+        var grandCarbs = 0;
+        $(".dinnerCarbsTotal, .lunchCarbsTotal, .breakfastCarbsTotal").each(function() {
 
-          var value = $(this).text();
-          // add only if the value is number
-          if(!isNaN(value) && value.length != 0) {
-              grandFat += parseFloat(value);
-          }
-      });
-      grandFat = Math.round(grandFat*100)/100;
-      $(".dailyFatTotal").html(grandFat);
-      $("#fatTotal").val(grandFat);
-}
+            var value = $(this).text();
+            // add only if the value is number
+            if (!isNaN(value) && value.length != 0) {
+                grandCarbs += parseFloat(value);
+            }
+        });
+        grandCarbs = Math.round(grandCarbs * 100) / 100;
+        $(".dailyCarbsTotal").html(grandCarbs);
+        $("#carbohydratesTotal").val(grandCarbs);
 
-$('#button').click(function(event){
+        // Calculate grand totals
+        var grandFat = 0;
+        $(".dinnerFatTotal, .lunchFatTotal, .breakfastFatTotal").each(function() {
 
-  var breakfastTable = $('#breakfastTable tbody');
-  breakfastTable.sortable();
-  $('#breakfastForm').val(breakfastTable.sortable('serialize'));
+            var value = $(this).text();
+            // add only if the value is number
+            if (!isNaN(value) && value.length != 0) {
+                grandFat += parseFloat(value);
+            }
+        });
+        grandFat = Math.round(grandFat * 100) / 100;
+        $(".dailyFatTotal").html(grandFat);
+        $("#fatTotal").val(grandFat);
+    }
 
-  var lunchTable = $('#lunchTable tbody');
-  lunchTable.sortable();
-  $('#lunchForm').val(lunchTable.sortable('serialize'));
+    $('#button').click(function(event) {
 
-  var dinnerTable = $('#dinnerTable tbody');
-  dinnerTable.sortable();
-  $('#dinnerForm').val(dinnerTable.sortable('serialize'));
+        var breakfastTable = $('#breakfastTable tbody');
+        breakfastTable.sortable();
+        $('#breakfastForm').val(breakfastTable.sortable('serialize'));
 
-  return true;
+        var lunchTable = $('#lunchTable tbody');
+        lunchTable.sortable();
+        $('#lunchForm').val(lunchTable.sortable('serialize'));
+
+        var dinnerTable = $('#dinnerTable tbody');
+        dinnerTable.sortable();
+        $('#dinnerForm').val(dinnerTable.sortable('serialize'));
+
+        return true;
+    });
+
 });
-
-  });
