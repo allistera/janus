@@ -25,7 +25,7 @@
         <ul class="title-area">
             <!-- Title Area -->
             <li class="name">
-                <h1><a href="/"><img src="/img/logo.png" width="32"> Your Diet Planner </a></h1>
+                <h1><a href="/" style="display:inline"><img src="/img/logo.png" width="32"> Your Diet Planner </a></h1>
             </li>
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
