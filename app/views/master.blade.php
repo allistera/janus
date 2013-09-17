@@ -19,13 +19,28 @@
     <link href='http://fonts.googleapis.com/css?family=Fauna+One|Balthazar' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+    @if (Auth::check())
+    <div class="show-for-touch fixed">
+        <div data-alert class="pjSuccessBox" style="opacity: 1;">
+            We have detected you might be using a mobile. Your Diet Planer doesn't support mobiles currently, please use a desktop.
+            <a href="#" class="closeSuccess">&times;</a>
+        </div>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(".closeSuccess").click(function() {
+                $(this).parent().hide();
+                return false;
+            });
+        });
+        </script>
+    </div>
+    @endif
     @if (!Auth::check())
     <nav class="top-bar">
         <ul class="title-area">
             <!-- Title Area -->
             <li class="name">
-                <h1><a href="/"><img src="/img/logo.png" width="32"> Your Diet Planner </a></h1>
+                <h1><a href="/" style="display:inline"><img src="/img/logo.png" width="32"> Your Diet Planner </a></h1>
             </li>
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
