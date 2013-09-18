@@ -68,7 +68,7 @@ Homepage
         <center>
             <h3 class="subheader">Problems? </h3>
             <p>
-                If you encounter any issues with the Your Diet Planner or just want to provide feedback feel free to get in touch. Just click the Contact button at the bottom right of any page or <a href="http://www.allisterantosik.com/contact" target="_blank">click here</a>.
+                If you encounter any issues with Your Diet Planner or just want to provide feedback feel free to get in touch. Just click the Contact button at the bottom right of any page or <a href="http://www.allisterantosik.com/contact" target="_blank">click here</a>.
             </p>
         </center>
     </div>
