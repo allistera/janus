@@ -20,6 +20,8 @@
 
     <meta name=”description” content="Create custom diet plans quickly and easily with our drag and drop interface then share with friends or print to PDF."/>
     <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+
+    <link rel="author" href="humans.txt" />
 </head>
 <body>
     @if (Auth::check())

@@ -1,0 +1,10 @@
+/* TEAM */
+Allister Antosik
+Site: allisterantosik.com
+Twitter: allisterantosik
+Location: Scotland
+
+/* SITE */
+Server: Ubuntu, Apache, PHP on serverbros.co.uk VPN
+Web Application: Laravel 4, MySQL, Jquery, Jquery UI, Foundation, Google Fonts, FancyBox
+DE: Mac OSX, Sublime Text 2, MAMP Pro, Sequel Pro, SourceTree, Github
