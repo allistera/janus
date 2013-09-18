@@ -126,6 +126,7 @@ class UserController extends \BaseController
             'protein' => 'numeric|between:0,999',
             'carbohydrates' => 'numeric|between:0,999',
             'fat' => 'numeric|between:0,999',
+            'user_id' => Auth::user()->id,
         ];
 
         $validator = Validator::make(Input::all(), $rules);
