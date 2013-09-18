@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-Diet Plan
-@endsection
+@section('title') Diet Plan @endsection
 
 @section('content')
 

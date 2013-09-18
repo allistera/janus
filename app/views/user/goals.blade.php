@@ -1,13 +1,11 @@
 @extends('master')
 
-@section('title')
-Set Goals
-@endsection
+@section('title') Set Goals @endsection
 
 @section('content')
   <div class="row">
     <h1>Set Goals</h1>
-    <p>Your goals are displayed when creating and viewing plans.</p>
+    <p>By setting your personal goals you can easily see if you have matched your targets when creating new diet plans.</p>
 
     {{ Form::open() }}
 

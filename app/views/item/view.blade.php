@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-Viewing Item
-@endsection
+@section('title') Viewing Item @endsection
 
 @section('content')
 

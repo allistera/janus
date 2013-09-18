@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-Items
-@endsection
+@section('title') Items @endsection
 
 @section('content')
 <div class="row">
@@ -35,6 +33,11 @@ Items
                 <td>{{ $item->fat }}</td>
             </tr>
         @endforeach
+        @if (count($items) === 0)
+        <tr>
+            <td colspan="2">No items created yet - <a href="/item/create">Create One</a>?</td>
+        </tr>
+        @endif
         </tbody>
     </table>
 

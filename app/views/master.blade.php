@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@yield('title') :: Your Diet Planner</title>
+    <title>@yield('title'):: Your Diet Planner</title>
 
     {{ HTML::style('css/normalize.css') }}
     {{ HTML::style('css/foundation.css') }}
@@ -17,6 +17,11 @@
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=Fauna+One|Balthazar' rel='stylesheet' type='text/css'>
+
+    <meta name=”description” content="Create custom diet plans quickly and easily with our drag and drop interface then share with friends or print to PDF."/>
+    <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+
+    <link rel="author" href="humans.txt" />
 </head>
 <body>
     @if (Auth::check())

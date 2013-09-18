@@ -16,4 +16,5 @@
 @endforeach
 |  |   |  |  |  |  |
 |**Total**| |  | {{ $plan->calories }} | {{ $plan->protein }} | {{ $plan->carbohydrates }} | {{ $plan->fat }}    <?php $d++; ?>
-Generated on [Your Diet Planner](http://yourdietplanner.net)
+
+^Generated ^using ^http://yourdietplanner.net

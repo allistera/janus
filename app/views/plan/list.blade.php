@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-Plans
-@endsection
+@section('title') Plans @endsection
 
 @section('content')
 <div class="row">
@@ -34,6 +32,11 @@ Plans
                 </td>
             </tr>
         @endforeach
+        @if (count($plans) === 0)
+        <tr>
+            <td colspan="2">No plans created yet - <a href="/plan/create">Create One</a>?</td>
+        </tr>
+        @endif
         </tbody>
     </table>
 

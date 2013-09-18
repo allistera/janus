@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-  Login
-@endsection
+@section('title') Login @endsection
 
 @section('content')
   <div class="pjLogin">

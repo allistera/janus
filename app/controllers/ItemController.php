@@ -48,6 +48,9 @@ class ItemController extends \BaseController
      */
     public function postCreate()
     {
+        // Make sure the current logged in user is creating item for themselfs
+        $this->validationRules['user_id'] = Auth::user()->id;
+
         $validator = Validator::make(Input::all(), $this->validationRules);
 
         if ($validator->fails()) {
@@ -79,7 +82,15 @@ class ItemController extends \BaseController
      */
     public function getView($id)
     {
-        return View::make('item.view')->with('item', Item::find($id));
+        $item = Item::find($id);
+
+        // Make sure the current logged in user is viewing their own item
+        if ($item->user_id != Auth::user()->id) {
+            return Redirect::to('item')->with('success', "You don't have the correct permissions to view this item!");
+            exit;
+        }
+
+        return View::make('item.view')->with('item', $item);
     }
 
     /**
@@ -90,6 +101,9 @@ class ItemController extends \BaseController
      */
     public function postView($id)
     {
+        // Make sure the current logged in user is creating item for themselfs
+        $this->validationRules['user_id'] = Auth::user()->id;
+
         $validator = Validator::make(Input::all(), $this->validationRules);
 
         if ($validator->fails()) {
@@ -118,6 +132,14 @@ class ItemController extends \BaseController
     */
     public function getDelete($id)
     {
+        $item = Item::find($id);
+
+        // Make sure the current logged in user is delete their own item
+        if ($item->user_id != Auth::user()->id) {
+            return Redirect::to('item')->with('success', "You don't have the correct permissions to delete this item!");
+            exit;
+        }
+
         Item::destroy($id);
 
         return Redirect::to('item')->with('success', "Successfully Deleted The Item!");
