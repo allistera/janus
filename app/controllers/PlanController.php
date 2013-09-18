@@ -71,6 +71,12 @@ class PlanController extends \BaseController
         // Get the current plan
         $plan = Plan::find($id);
 
+        // Make sure the current logged in user is viewing their own plan
+        if ($plan->user_id != Auth::user()->id) {
+            return Redirect::to('plan')->with('success', "You don't have the correct permissions to view this plan!");
+            exit;
+        }
+
         $breakfasts = explode(',', $plan->breakfast);
         $breakfasts = Item::wherein('id', $breakfasts)->get();
 
@@ -104,6 +110,12 @@ class PlanController extends \BaseController
         // Get the current plan
         $plan = Plan::find($id);
 
+        // Make sure the current logged in user is viewing their own plan
+        if ($plan->user_id != Auth::user()->id) {
+            return Redirect::to('plan')->with('success', "You don't have the correct permissions to view this plan!");
+            exit;
+        }
+
         $breakfasts = explode(',', $plan->breakfast);
         $breakfasts = Item::wherein('id', $breakfasts)->get();
 
@@ -133,6 +145,14 @@ class PlanController extends \BaseController
     */
     public function getDelete($id)
     {
+        $plan = Plan::find($id);
+
+        // Make sure the current logged in user is viewing their own plan
+        if ($plan->user_id != Auth::user()->id) {
+            return Redirect::to('plan')->with('success', "You don't have the correct permissions to delete this plan!");
+            exit;
+        }
+
         // First delete all shares
         Share::where('plan_id', '=', $id)->delete();
 
@@ -153,6 +173,12 @@ class PlanController extends \BaseController
     {
         // Get the current plan
         $plan = Plan::find($id);
+
+        // Make sure the current logged in user is viewing their own plan
+        if ($plan->user_id != Auth::user()->id) {
+            return Redirect::to('plan')->with('success', "You don't have the correct permissions to share this plan!");
+            exit;
+        }
 
         $breakfasts = explode(',', $plan->breakfast);
         $breakfasts = Item::wherein('id', $breakfasts)->get();
