@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-Plans
-@endsection
+@section('title') Plans @endsection
 
 @section('content')
 <div class="row">

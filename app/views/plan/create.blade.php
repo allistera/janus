@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-Creating Plan
-@endsection
+@section('title') Creating Plan @endsection
 
 @section('javascript')
 {{ HTML::script('js/plan.create.js') }}

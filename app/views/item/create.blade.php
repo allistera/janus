@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-Create Item
-@endsection
+@section('title') Create Item @endsection
 
 @section('content')
   <div class="row">

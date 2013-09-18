@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-Homepage
-@endsection
+@section('title') Homepage @endsection
 
 @section('content')
 

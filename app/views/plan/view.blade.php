@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-View Plan
-@endsection
+@section('title') View Plan @endsection
 
 @section('javascript')
 {{ HTML::script('js/plan.view.js') }}
@@ -96,18 +94,18 @@ View Plan
           </tr>
         </thead>
         <tbody>
-        <?php 
+        <?php
           $bCal = 0;
           $bPro = 0;
           $bCar = 0;
           $bFat = 0;
         ?>
         @foreach($breakfasts as $breakfast)
-        <?php 
+        <?php
           $bCal = $bCal + $breakfast->calories;
           $bPro = $bPro + $breakfast->protein;
-          $bCar = $bCar + $breakfast->carbohydrates; 
-          $bFat = $bFat + $breakfast->fat; 
+          $bCar = $bCar + $breakfast->carbohydrates;
+          $bFat = $bFat + $breakfast->fat;
         ?>
             <tr>
               <td>{{ $breakfast->name }}</td>
@@ -146,18 +144,18 @@ View Plan
         </tr>
       </thead>
       <tbody>
-      <?php 
+      <?php
         $lCal = 0;
         $lPro = 0;
         $lCar = 0;
         $lFat = 0;
       ?>
       @foreach($lunches as $lunch)
-        <?php 
+        <?php
           $lCal = $lCal + $lunch->calories;
           $lPro = $lPro + $lunch->protein;
-          $lCar = $lCar + $lunch->carbohydrates; 
-          $lFat = $lFat + $lunch->fat; 
+          $lCar = $lCar + $lunch->carbohydrates;
+          $lFat = $lFat + $lunch->fat;
         ?>
           <tr>
             <td>{{ $lunch->name }}</td>
@@ -194,18 +192,18 @@ View Plan
         </tr>
       </thead>
       <tbody>
-      <?php 
+      <?php
         $dCal = 0;
         $dPro = 0;
         $dCar = 0;
         $dFat = 0;
       ?>
       @foreach($dinners as $dinner)
-        <?php 
+        <?php
           $dCal = $dCal + $dinner->calories;
           $dPro = $dPro + $dinner->protein;
-          $dCar = $dCar + $dinner->carbohydrates; 
-          $dFat = $dFat + $dinner->fat; 
+          $dCar = $dCar + $dinner->carbohydrates;
+          $dFat = $dFat + $dinner->fat;
         ?>
           <tr>
             <td>{{ $dinner->name }}</td>
@@ -253,7 +251,7 @@ View Plan
       </tfoot>
     </table>
       </div>
-      
+
     </div>
   </div>
 @endsection

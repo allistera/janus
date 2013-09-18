@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@yield('title') :: Your Diet Planner</title>
+    <title>@yield('title'):: Your Diet Planner</title>
 
     {{ HTML::style('css/normalize.css') }}
     {{ HTML::style('css/foundation.css') }}

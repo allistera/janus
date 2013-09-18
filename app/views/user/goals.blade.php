@@ -1,8 +1,6 @@
 @extends('master')
 
-@section('title')
-Set Goals
-@endsection
+@section('title') Set Goals @endsection
 
 @section('content')
   <div class="row">
