@@ -344,3 +344,6 @@ h1, h2, h3 {
 .delBtn i:hover {
     opacity: 0.6;
 }
+.homepageImage {
+    width: 140px;
+}
