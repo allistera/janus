@@ -17,7 +17,7 @@
     <div class="columns">
         <div class="row">
             <div class="small-3 columns">
-                <a href="/img/homepage/items_large.png" class="fancybox th radius"><img src="/img/homepage/items.png"></a>
+                <a href="/img/homepage/items_large.png" class="fancybox th radius"><img src="/img/homepage/items.png" class="homepageImage"></a>
             </div>
             <div class="small-9 columns">
                 <h3 class="subheader">Create your own items</h3>
@@ -39,7 +39,7 @@
                 </p>
             </div>
             <div class="small-3 columns">
-                <a href="/img/homepage/goals_large.png" class="fancybox th radius"><img src="/img/homepage/goals.png"></a>
+                <a href="/img/homepage/goals_large.png" class="fancybox th radius"><img src="/img/homepage/goals.png" class="homepageImage"></a>
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
     <div class="twelve columns">
         <div class="row">
             <div class="small-3 columns">
-                <a href="/img/homepage/pdf_large.png" class="fancybox th radius"><img src="/img/homepage/pdf.png"></a>
+                <a href="/img/homepage/pdf_large.png" class="fancybox th radius"><img src="/img/homepage/pdf.png" class="homepageImage"></a>
             </div>
             <div class="small-9 columns">
                 <h3 class="subheader">Share to the world</h3>

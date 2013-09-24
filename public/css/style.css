@@ -238,7 +238,7 @@ h1, h2, h3 {
     background: #F2F2F2;
     text-align: center;
     width: 300px;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 20px;
     border: 1px solid #D4D4D4;
 }
@@ -343,4 +343,7 @@ h1, h2, h3 {
 }
 .delBtn i:hover {
     opacity: 0.6;
+}
+.homepageImage {
+    width: 140px;
 }
