@@ -41,19 +41,19 @@
   <apply executable="php" failonerror="true">
    <arg value="-l" />
 
-   <fileset dir="${project.basedir}/app/controllers">
+   <fileset dir="app/controllers">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${project.basedir}/app/database/migrations">
+   <fileset dir="app/database/migrations">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${project.basedir}/app/models">
+   <fileset dir="app/models">
     <include name="**/*.php" />
    </fileset>
 
-   <fileset dir="${project.basedir}/app/tests">
+   <fileset dir="app/tests">
     <include name="**/*.php" />
    </fileset>
 
