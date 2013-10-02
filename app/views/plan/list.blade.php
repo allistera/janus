@@ -42,6 +42,7 @@
 
     <div class="advert">
         <small>Advertisements</small>
+        <br>
         <script type="text/javascript"><!--
             google_ad_client = "ca-pub-8480624367797601";
             /* Your Diet Planner */
