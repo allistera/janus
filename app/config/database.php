@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'janus',
 			'username'  => 'root',
-			'password'  => 'root',
+			'password'  => 'sCRY07NO819r77v',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
