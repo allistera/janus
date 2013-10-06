@@ -71,5 +71,18 @@
         </center>
     </div>
 </div>
-
+<style>
+.advert-2 { width: 320px; height: 50px; }
+@media(min-width: 500px) { .advert-2 { width: 468px; height: 60px; } }
+@media(min-width: 800px) { .advert-2 { width: 728px; height: 90px; } }
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Advert 2 -->
+<ins class="adsbygoogle advert-2"
+     style="display:inline-block"
+     data-ad-client="ca-pub-8480624367797601"
+     data-ad-slot="6098338263"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 @endsection
