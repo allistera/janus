@@ -1,3 +1,3 @@
 ## Project Janus
 
-Current Release Version: 1.0.0 Beta 02
+Diet Plan Managment software built on Laravel.
